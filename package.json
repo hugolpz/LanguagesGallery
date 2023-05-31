@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-cssbeautifier": "^0.1.2",
+    "grunt-uncss": "^0.10.1"
+  }
+}
