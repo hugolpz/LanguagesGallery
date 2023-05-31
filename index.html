@@ -1241,7 +1241,7 @@
                             </svg>
                             Gender split</h4>
                           <!-- Value -->
-                          <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc"><span>♀{{ meaningfulNumber(+language.speakersOthers + +language.speakersFemales) }}</span><span>{{ meaningfulNumber(language.speakersMales) }}♂</span></p>
+                          <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc"><span>♀{{ meaningfulNumber(+language.speakersFemales) }}</span><span>{{ +language.speakersOthers?meaningfulNumber(+language.speakersOthers):'' }}</span><span>{{ meaningfulNumber(language.speakersMales) }}♂</span></p>
                           <div class="progress--Te4aM">
                             <div class="visually-hidden">{{ percent(+language.speakersOthers + +language.speakersFemales,+language.speakers) }}%</div>
                             <div class="progressBar--u2kfl gender-female" :style="{ width: percent(+language.speakersOthers + +language.speakersFemales,language.speakers)+'%'}"></div>
@@ -1276,10 +1276,10 @@
                           </svg>
                             Recordings gender split</h4>
                           <!-- Value -->
-                          <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc"><span>{{ meaningfulNumber(language.recordsFemale) }}</span><span>{{ meaningfulNumber(language.recordsMale) }}</span></p>
+                          <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc"><span>{{ meaningfulNumber(language.recordsFemale) }}</span><span>{{ meaningfulNumber(language.recordsOthers,'') }}</span><span>{{ meaningfulNumber(language.recordsMale) }}</span></p>
                           <div class="progress--Te4aM">
-                            <div class="visually-hidden">{{ percent(language.recordsFemale,language.records) }}%</div>
-                            <div class="progressBar--u2kfl gender-female" :style="{ width: percent(language.recordsFemale,language.records)+'%'}"></div>
+                            <div class="visually-hidden">{{ percent(language.recordsFemale,language.records) || 0 }}%</div>
+                            <div class="progressBar--u2kfl gender-female" :style="{ width: percent(language.recordsFemale,language.records) +'%'}"></div>
                           </div>
                         </div>
 
