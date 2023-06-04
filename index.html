@@ -589,9 +589,9 @@
     --gradient-pink: #f89096;
     --gradient-purple: #b1b4e5;
     --link-color: var(--dark-blue);
-    --progress-default: #517FC1; /* humaniki : */
-    --progress-females:#F19359; /* humaniki : */
-    --progress-others:var(--light-purple); /* humaniki : #FAD965 */
+    --progress-default: #517FC1; /* humaniki : males */
+    --progress-females: #F19359; /* humaniki : females */
+    --progress-others: #FAD965; /* humaniki : others */
     --override-z-index: 4;
     --header-z-index: 3;
     --top-z-index: 2;
@@ -1133,27 +1133,26 @@
 /* ************************************** */
 /* Progress bars */
 .progress--Te4aM {
+    z-index:1;
     background: var(--blue);
     height: .5rem;
     width: 100%;
+    position:relative;
   }
   
-  .progress--Te4aM > *,
-  .progressBar--u2kfl {
-    z-index: 2;
-    height: 100%;
-    max-width: 100%;
-    display: inline-block;
-    position: relative;
-    top:0;
-    font-size: none !important;
-  }
+.progressBar--u2kfl {
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-  .progress-words { background: var(--light-purple);}
-  .progress-default { background: var(--progress-default);}
-  .progress-females { background: var(--progress-females); }
-  .progress-others { background: var(--progress-others); }
-  
+.progress-default { z-index:1; background: var(--progress-default);}
+.progress-others { z-index:2; background: var(--progress-others); }
+.progress-females { z-index:3; background: var(--progress-females); }
+.progress-words { z-index:2; background: var(--light-purple);}
+
 /* ************************************** */
 /* Stickyness */ /* NO REALLY USED : */
 
@@ -1272,12 +1271,13 @@ i.tpl {
                           </p>
                           <div class="progress--Te4aM">
                             <!-- SPAN TRIAL -->
-                            <!-- <span class="visually-hidden">{{ percent(language.speakersFemales,language.speakers) }}%</span> -->
-                            <span class="progressBar--u2kfl progress-females" :style="{ width: percent(+language.speakersFemales,language.speakers)+'%'}"></span>
-                            <!-- <span class="visually-hidden">{{ percent(language.speakersOthers,language.speakers) }}%</span> -->
-                            <span class="progressBar--u2kfl progress-others" :style="{ 
-                              width: percent(language.speakersOthers,language.speakers)+'%' 
-                            }"></span>
+                            <div class="visually-hidden">{{ percent(language.speakersFemales,language.speakers) }}%</div>
+                            <div class="progressBar--u2kfl progress-females" :style="{ width: percent(+language.speakersFemales,language.speakers)+'%'}"></div>
+                            <div class="visually-hidden">{{ percent(language.speakersOthers,language.speakers) }}%</div>
+                            <div class="progressBar--u2kfl progress-others" :style="{ 
+                              width: percent(language.speakersOthers,language.speakers)+'%',
+                              left: percent(+language.speakersFemales,language.speakers)+'%'
+                            }"></div>
                           </div>
                         </div>
   <!-- DATA ITEM 3 -->                      
@@ -1297,9 +1297,8 @@ i.tpl {
                             </p>
                             <div class="progress--Te4aM">
                               <!-- DIV TRIAL -->
-                              <!-- <div class="visually-hidden">{{ percent(language.words,language.records) }}%</div> -->
+                              <div class="visually-hidden">{{ percent(language.words,language.records) }}%</div>
                               <div class="progressBar--u2kfl progress-words" :style="{ width: percent(language.words,language.records)+'%'}"></div>
-                              <div class="progressBar--u2kfl progress-females" :style="{ width: 5+'%'}"></div>
                             </div>
                         </div>
 
@@ -1316,12 +1315,16 @@ i.tpl {
                           <!-- Value -->
                           <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc">
                             <span>{{ meaningfulNumber(language.recordsFemale,"short",0) }}</span>
-                            <span>{{ meaningfulNumber(language.recordsOthers,"short",'') }}</span>
+                            <span>{{ meaningfulNumber(language.recordsOthers,"shorter",'') }}</span>
                             <span>{{ meaningfulNumber(language.recordsMale,"short",0) }}</span>
                           </p>
                           <div class="progress--Te4aM">
                             <div class="visually-hidden">{{ percent(language.recordsFemale,language.records) || 0 }}%</div>
                             <div class="progressBar--u2kfl progress-females" :style="{ width: percent(language.recordsFemale,language.records) +'%'}"></div>
+                            <div class="progressBar--u2kfl progress-others" :style="{ 
+                              width: percent(language.recordsOthers,language.records)+'%',
+                              left: percent(language.recordsFemale,language.records)+'%'
+                            }"></div>
                           </div>
                         </div>
 
@@ -1444,6 +1447,7 @@ var app=new Vue({
     methods: {
       meaningfulNumber: function(num,suffixType='short',zero=null) {
         var na,k,M; // pretty suffixes
+            suffixType=='shorter' ||
             suffixType == 'short'?(na='n.a.',k='k', M='M')
             :suffixType == 'long'?(na='Undocumented',k=' thousands', M=' millions')
             :(na='',k=',000',M =',000,000');
@@ -1452,8 +1456,8 @@ var app=new Vue({
         var numStr = 
           num == undefined ? ''+na
           : num == 0? 0
-          : num < 10000? num
-          : (num < 10000 && suffixType=='shorter') ?  (Math.round(num / 100)/10) +k
+          : num < 1000? num
+          : num < 10000 && !suffixType=='shorter'? num
           : num < 100000? (Math.round(num / 100)/10) +k
             : num < 1000000? (Math.round(num / 1000)) +k
             : num < 20000000? (Math.round(num / 100000)/10) +M
