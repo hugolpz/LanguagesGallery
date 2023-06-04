@@ -589,6 +589,9 @@
     --gradient-pink: #f89096;
     --gradient-purple: #b1b4e5;
     --link-color: var(--dark-blue);
+    --progress-default: #517FC1; /* humaniki : */
+    --progress-females:#F19359; /* humaniki : */
+    --progress-others:var(--light-purple); /* humaniki : #FAD965 */
     --override-z-index: 4;
     --header-z-index: 3;
     --top-z-index: 2;
@@ -1106,7 +1109,7 @@
   /** *************************************************************HERE SVG CLASS **************** */
 
   
-  .DataItemValue--G3soc {
+.DataItemValue--G3soc {
     font-weight: 300;
     font-size: var(--font-size-md);
     line-height: var(--font-size-md);
@@ -1135,16 +1138,25 @@
     width: 100%;
   }
   
+  .progress--Te4aM > *,
   .progressBar--u2kfl {
-    background: var(--light-purple);
+    z-index: 2;
     height: 100%;
     max-width: 100%;
+    display: inline-block;
+    position: relative;
+    top:0;
+    font-size: none !important;
   }
-  
-  .gender-female { background: orange; }
+
+  .progress-words { background: var(--light-purple);}
+  .progress-default { background: var(--progress-default);}
+  .progress-females { background: var(--progress-females); }
+  .progress-others { background: var(--progress-others); }
   
 /* ************************************** */
-/* Stickyness */
+/* Stickyness */ /* NO REALLY USED : */
+
 .sticky { 
   position: -webkit-sticky; 
   position: sticky;  
@@ -1153,7 +1165,6 @@
 
 </style>
 <style id="style-icons">
-
 /* ****************************************************** */
 /* SVG ICON BASE **************************************** */
 .DataItemHeadingIcon--tW9fa {
@@ -1172,28 +1183,6 @@ i.tpl {
   background-color: #FFF;
   background-size: 100%;
 }
-
-.icon1 {
-  background: url("data:image/svg+xml;charset=UTF-8,<svg class='_DataItemHeadingIcon--tW9fa' fill='%23575757' width='13' height='13' viewBox='0 0 13 13' xmlns='http://www.w3.org/2000/svg'><path d='M7.9 8.5c-.2.1-.2.4 0 .5l.2.5-.2.5c-.2.1-.2.3 0 .5l.2.1.3-.1a1.4 1.4 0 0 0 0-2 .4.4 0 0 0-.5 0ZM9.4 7.2v.6a2.4 2.4 0 0 1 0 3.4v.5l.3.2s.2 0 .3-.2a3.2 3.2 0 0 0 0-4.5.4.4 0 0 0-.6 0Z'></path><path d='M11.6 6.1a.4.4 0 0 0-.6 0v.5a4 4 0 0 1 0 5.7v.6h.6a4.8 4.8 0 0 0 0-6.8ZM8 6.5c0-.3 0-.5-.3-.7l-1.1-.6C6 2.2 3.4.2.4 0 .2 0 0 .2 0 .4s.2.4.4.4c2.6 0 5 2.1 5.5 4.7l.1.3 1.3.7-1.2.7-.2.3-.2.7H3.2c-.2 0-.4.1-.4.4A3 3 0 0 0 4 10.9c-1 .8-2.2 1.3-3.5 1.3-.2 0-.4.2-.4.4s.2.4.4.4c1.6 0 3.2-.7 4.4-1.9v-.3l-.1-.3c-.6-.3-1-1-1-1.6H6c.1 0 .3 0 .3-.2l.3-1 1-.6c.3 0 .5-.3.5-.6Z'></path><path d='M3.1 5.5h.4l.1-.3V4.9a.4.4 0 0 0-.5 0H3l-.1.3v.2l.2.1Z'></path></svg>") center no-repeat;
-  background-color: #FFF;
-  background-size: 100%;
-}
-.icon2 {
-  background: url("data:image/svg+xml;charset=UTF-8,<svg class='_DataItemHeadingIcon--tW9fa' fill='%23575757' width='13' height='13' viewBox='0 0 13 13' xmlns='http://www.w3.org/2000/svg'><path d='M6.893 7.056V3.548a.387.387 0 1 0-.775 0v3.66c0 .103.04.194.112.266l2.62 2.681a.394.394 0 0 0 .276.113.37.37 0 0 0 .265-.113.376.376 0 0 0 0-.54l-2.519-2.57.02.01Z'></path><path d='M12.623 6.831h-.367a5.79 5.79 0 0 0-5.384-5.383V.765h1.59c.215 0 .388-.174.388-.388S8.677 0 8.463 0H4.507a.387.387 0 1 0 0 .775h1.59v.683A5.762 5.762 0 0 0 .724 6.831H.377A.385.385 0 0 0 0 7.22c0 .214.173.387.387.387h.337c.194 3.008 2.702 5.404 5.76 5.404 3.06 0 5.568-2.396 5.761-5.404h.368a.387.387 0 1 0 0-.775h.01Zm-6.128 5.404A5.026 5.026 0 0 1 1.478 7.22c0-2.763 2.244-5.027 5.007-5.027 2.763 0 5.016 2.253 5.016 5.017s-2.253 5.016-5.016 5.016l.01.01Z'></path></svg>") center no-repeat;
-  background-color: #FFF;
-  background-size: 100%;
-}
-.icon3 {
-  background: url("data:image/svg+xml;charset=UTF-8,<svg class='_DataItemHeadingIcon--tW9fa' fill='%23575757' width='13' height='13' viewBox='0 0 13 13' xmlns='http://www.w3.org/2000/svg'><path d='M5.8 2.3h5.6a.4.4 0 1 0 0-.8H5.8a.4.4 0 1 0 0 .8ZM7.2 10.7H.4a.4.4 0 1 0 0 .8h6.8a.4.4 0 1 0 0-.8ZM.4 5.4H10a.4.4 0 1 0 0-.8H.4c-.2 0-.4.2-.4.4s.2.4.4.4ZM0 8c0 .2.2.4.4.4h12.2a.4.4 0 1 0 0-.8H.4c-.2 0-.4.2-.4.4ZM9.8 10.7H9a.4.4 0 1 0 0 .8h.7c.1.2.1.6-.1.8-.2.2-.2.4 0 .6l.2.1.3-.1c.6-.6.6-1.5 0-2.1l-.3-.1ZM12.3 10.7h-.9a.4.4 0 1 0 0 .8h.7c.2.2.2.6 0 .8-.2.2-.2.4 0 .6l.2.1.3-.1c.6-.6.5-1.5 0-2.1l-.3-.1ZM3.2 2.3H4a.4.4 0 1 0 0-.8h-.7a.7.7 0 0 1 .1-.8c.2-.2.2-.4 0-.6a.4.4 0 0 0-.5 0c-.6.6-.6 1.5 0 2.1l.3.1ZM.7 2.3h.9a.4.4 0 1 0 0-.8H.9a.7.7 0 0 1 0-.8c.2-.2.2-.4 0-.6a.4.4 0 0 0-.5 0C0 .7 0 1.6.4 2.2l.3.1Z'></path></svg>") center no-repeat;
-  background-color: #FFF;
-  background-size: 100%;
-}
-.icon4 {
-  background: url("data:image/svg+xml;charset=UTF-8,<svg class='_DataItemHeadingIcon--tW9fa' fill='%23575757' width='13' height='13' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'><path d='M17.08 17.318a6.13 6.13 0 0 1 .306 1.895v3.79c0 .598-.408.997-1.02.997-.613 0-1.022-.399-1.022-.997v-3.89c.102-.797-.204-1.396-.714-1.894-.306-.3-.409-.698-.204-.997.102-.4.51-.599.816-.699 2.96-.299 5.716-1.296 5.716-5.983 0-1.097-.408-2.194-1.224-3.091-.307-.3-.307-.699-.205-.998.307-.797.307-1.595.102-2.393-.51.1-1.326.399-2.653 1.296-.205.2-.51.2-.817.1a12.487 12.487 0 0 0-6.635 0c-.306.1-.612.1-.919-.1-1.225-.897-2.143-1.196-2.654-1.296-.204.798-.204 1.596.102 2.393.102.4.102.798-.204.998-.816.897-1.225 1.994-1.225 3.091 0 4.687 2.756 5.684 5.717 5.983.408 0 .714.3.816.699.102.398 0 .797-.204.997-.51.498-.714 1.097-.714 1.795v3.889c0 .598-.409.997-1.021.997-.613 0-1.021-.399-1.021-.997v-1.695c-3.062.498-4.39-1.197-5.308-2.294-.408-.499-.714-.897-1.123-.997-.51-.1-.918-.698-.714-1.197.102-.498.714-.897 1.225-.698 1.02.3 1.633.997 2.245 1.695.817 1.097 1.531 1.895 3.675 1.496v-.1c0-.598.102-1.296.306-1.795-2.858-.598-5.92-2.393-5.92-7.678 0-1.496.51-2.892 1.429-3.99-.408-1.395-.306-2.692.306-3.988a.91.91 0 0 1 .613-.599c.408-.1 1.735-.299 4.49 1.397 2.247-.499 4.594-.499 6.738 0C18.815.764 20.244.964 20.652 1.063c.306.1.51.3.613.599.51 1.296.612 2.593.306 3.889A6.175 6.175 0 0 1 23 9.54c0 5.684-3.47 7.28-5.92 7.778z'/></svg>") center no-repeat;
-  background-color: #FFF;
-  background-size: 100%;
-}
-
 </style>
 </head>
 <body>
@@ -1255,15 +1244,13 @@ i.tpl {
                         <div class="DataItem--r5BlZ">
                           <h4 class="DataItemHeading--QFQyU">
                             <!-- <i class="DataItemHeadingIcon--tW9fa icon1"></i> SEE CSS "TEST" -->
-                            <svg class="DataItemHeadingIcon--tW9fa" width="13"
-                              height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M7.9 8.5c-.2.1-.2.4 0 .5l.2.5-.2.5c-.2.1-.2.3 0 .5l.2.1.3-.1a1.4 1.4 0 0 0 0-2 .4.4 0 0 0-.5 0ZM9.4 7.2v.6a2.4 2.4 0 0 1 0 3.4v.5l.3.2s.2 0 .3-.2a3.2 3.2 0 0 0 0-4.5.4.4 0 0 0-.6 0Z">
-                              </path>
-                              <path
-                                d="M11.6 6.1a.4.4 0 0 0-.6 0v.5a4 4 0 0 1 0 5.7v.6h.6a4.8 4.8 0 0 0 0-6.8ZM8 6.5c0-.3 0-.5-.3-.7l-1.1-.6C6 2.2 3.4.2.4 0 .2 0 0 .2 0 .4s.2.4.4.4c2.6 0 5 2.1 5.5 4.7l.1.3 1.3.7-1.2.7-.2.3-.2.7H3.2c-.2 0-.4.1-.4.4A3 3 0 0 0 4 10.9c-1 .8-2.2 1.3-3.5 1.3-.2 0-.4.2-.4.4s.2.4.4.4c1.6 0 3.2-.7 4.4-1.9v-.3l-.1-.3c-.6-.3-1-1-1-1.6H6c.1 0 .3 0 .3-.2l.3-1 1-.6c.3 0 .5-.3.5-.6Z">
-                              </path>
-                              <path d="M3.1 5.5h.4l.1-.3V4.9a.4.4 0 0 0-.5 0H3l-.1.3v.2l.2.1Z"></path>
+                            <svg class='DataItemHeadingIcon--tW9fa' width='13'
+                            height='13'
+                            viewBox='0 0 13 13'
+                            xmlns='http://www.w3.org/2000/svg'>
+                              <path d='M7.9 8.5c-.2.1-.2.4 0 .5l.2.5-.2.5c-.2.1-.2.3 0 .5l.2.1.3-.1a1.4 1.4 0 0 0 0-2 .4.4 0 0 0-.5 0ZM9.4 7.2v.6a2.4 2.4 0 0 1 0 3.4v.5l.3.2s.2 0 .3-.2a3.2 3.2 0 0 0 0-4.5.4.4 0 0 0-.6 0Z'></path>
+                              <path d='M11.6 6.1a.4.4 0 0 0-.6 0v.5a4 4 0 0 1 0 5.7v.6h.6a4.8 4.8 0 0 0 0-6.8ZM8 6.5c0-.3 0-.5-.3-.7l-1.1-.6C6 2.2 3.4.2.4 0 .2 0 0 .2 0 .4s.2.4.4.4c2.6 0 5 2.1 5.5 4.7l.1.3 1.3.7-1.2.7-.2.3-.2.7H3.2c-.2 0-.4.1-.4.4A3 3 0 0 0 4 10.9c-1 .8-2.2 1.3-3.5 1.3-.2 0-.4.2-.4.4s.2.4.4.4c1.6 0 3.2-.7 4.4-1.9v-.3l-.1-.3c-.6-.3-1-1-1-1.6H6c.1 0 .3 0 .3-.2l.3-1 1-.6c.3 0 .5-.3.5-.6Z'></path>
+                              <path d='M3.1 5.5h.4l.1-.3V4.9a.4.4 0 0 0-.5 0H3l-.1.3v.2l.2.1Z'></path>
                             </svg>Speakers</h4>
                           <p class="DataItemValue--G3soc">{{ meaningfulNumber(language.speakers) }}</p>
                         </div>
@@ -1271,38 +1258,48 @@ i.tpl {
                         <div class="DataItem--r5BlZ">
                           <!-- SVG & Dimension -->
                           <h4 class="DataItemHeading--QFQyU">
-                            <svg class="DataItemHeadingIcon--tW9fa" width="13"
-                              height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M6.893 7.056V3.548a.387.387 0 1 0-.775 0v3.66c0 .103.04.194.112.266l2.62 2.681a.394.394 0 0 0 .276.113.37.37 0 0 0 .265-.113.376.376 0 0 0 0-.54l-2.519-2.57.02.01Z">
-                              </path>
-                              <path
-                                d="M12.623 6.831h-.367a5.79 5.79 0 0 0-5.384-5.383V.765h1.59c.215 0 .388-.174.388-.388S8.677 0 8.463 0H4.507a.387.387 0 1 0 0 .775h1.59v.683A5.762 5.762 0 0 0 .724 6.831H.377A.385.385 0 0 0 0 7.22c0 .214.173.387.387.387h.337c.194 3.008 2.702 5.404 5.76 5.404 3.06 0 5.568-2.396 5.761-5.404h.368a.387.387 0 1 0 0-.775h.01Zm-6.128 5.404A5.026 5.026 0 0 1 1.478 7.22c0-2.763 2.244-5.027 5.007-5.027 2.763 0 5.016 2.253 5.016 5.017s-2.253 5.016-5.016 5.016l.01.01Z">
-                              </path>
-                            </svg>
+                            <svg class='DataItemHeadingIcon--tW9fa' width='13'
+                            height='13'
+                            viewBox='0 0 25 25'
+                            xmlns='http://www.w3.org/2000/svg'>
+                              <path d='M16.923 17.318c.201.612.461 1.251.463 1.895v3.79c0 .598-.215.997-.827.997-.613 0-.638-.399-.638-.997v-3.89c.103-.797-.397-1.396-.907-1.894-.306-.3-.245-.323-.204-.612.102-.4.143-.757.816-.699 2.96-.299 5.912-1.681 5.912-6.368 0-1.097-.603-2.194-1.419-3.091-.307-.3-.307-.699-.205-.998.307-.797.307-1.98.102-2.778-.51.1-1.711.4-3.038 1.296-.205.2-.51.2-.817.1a12.487 12.487 0 0 0-6.635 0c-.306.1-.612.1-.919-.1-1.225-.897-2.535-1.196-3.046-1.296-.205.798-.205 1.981.101 2.778.102.4.102.798-.204.998-.816.897-1.225 1.994-1.225 3.091 0 4.687 2.57 6.061 5.532 6.36.408 0 .714.3.816.7.102.397 0 .419-.204.619-.51.498-.714 1.097-.714 1.795v3.889c0 .598-.017.997-.629.997-.613 0-.835-.399-.835-.997v-1.888c-3.062.498-4.006-1.197-4.924-2.294-.408-.5-.714-.897-1.123-.997-.51-.1-1.302-.505-1.098-1.004.102-.498.714-.705 1.225-.506 1.02.3 1.633.997 2.245 1.695.817 1.097 1.531 1.895 3.675 1.496.05-1.199.248-1.547.455-2.087-2.858-.598-6.069-2.393-6.069-7.678 0-1.496.51-2.892 1.429-3.99-.408-1.395-.306-2.692.306-3.988a.91.91 0 0 1 .613-.599c.408-.1 1.543-.299 4.298 1.397 2.247-.499 4.979-.499 7.123 0 2.654-1.696 3.89-1.496 4.298-1.397.306.1.51.3.613.599.51 1.296.612 2.593.306 3.889A6.175 6.175 0 0 1 23 9.54c0 5.684-3.627 7.28-6.077 7.778z' /></svg>
                             Gender split</h4>
                           <!-- Value -->
-                          <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc"><span>♀{{ meaningfulNumber(+language.speakersFemales) }}</span><span>{{ +language.speakersOthers?meaningfulNumber(+language.speakersOthers):'' }}</span><span>{{ meaningfulNumber(language.speakersMales) }}♂</span></p>
+                          <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc">
+                            <span>♀{{ meaningfulNumber(language.speakersFemales) }}</span>
+                            <span>{{ language.speakersOthers?meaningfulNumber(language.speakersOthers,'shorter'):'' }}</span>
+                            <span>{{ meaningfulNumber(language.speakersMales) }}♂</span>
+                          </p>
                           <div class="progress--Te4aM">
-                            <div class="visually-hidden">{{ percent(+language.speakersOthers + +language.speakersFemales,+language.speakers) }}%</div>
-                            <div class="progressBar--u2kfl gender-female" :style="{ width: percent(+language.speakersOthers + +language.speakersFemales,language.speakers)+'%'}"></div>
+                            <!-- SPAN TRIAL -->
+                            <!-- <span class="visually-hidden">{{ percent(language.speakersFemales,language.speakers) }}%</span> -->
+                            <span class="progressBar--u2kfl progress-females" :style="{ width: percent(+language.speakersFemales,language.speakers)+'%'}"></span>
+                            <!-- <span class="visually-hidden">{{ percent(language.speakersOthers,language.speakers) }}%</span> -->
+                            <span class="progressBar--u2kfl progress-others" :style="{ 
+                              width: percent(language.speakersOthers,language.speakers)+'%' 
+                            }"></span>
                           </div>
                         </div>
   <!-- DATA ITEM 3 -->                      
                         <div class="DataItem--r5BlZ">
                           <h4 class="DataItemHeading--QFQyU">
-                            <svg class="DataItemHeadingIcon--tW9fa" width="13"
-                            height="13"
-                            viewBox="0 0 13 13"
-                            xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5.8 2.3h5.6a.4.4 0 1 0 0-.8H5.8a.4.4 0 1 0 0 .8ZM7.2 10.7H.4a.4.4 0 1 0 0 .8h6.8a.4.4 0 1 0 0-.8ZM.4 5.4H10a.4.4 0 1 0 0-.8H.4c-.2 0-.4.2-.4.4s.2.4.4.4ZM0 8c0 .2.2.4.4.4h12.2a.4.4 0 1 0 0-.8H.4c-.2 0-.4.2-.4.4ZM9.8 10.7H9a.4.4 0 1 0 0 .8h.7c.1.2.1.6-.1.8-.2.2-.2.4 0 .6l.2.1.3-.1c.6-.6.6-1.5 0-2.1l-.3-.1ZM12.3 10.7h-.9a.4.4 0 1 0 0 .8h.7c.2.2.2.6 0 .8-.2.2-.2.4 0 .6l.2.1.3-.1c.6-.6.5-1.5 0-2.1l-.3-.1ZM3.2 2.3H4a.4.4 0 1 0 0-.8h-.7a.7.7 0 0 1 .1-.8c.2-.2.2-.4 0-.6a.4.4 0 0 0-.5 0c-.6.6-.6 1.5 0 2.1l.3.1ZM.7 2.3h.9a.4.4 0 1 0 0-.8H.9a.7.7 0 0 1 0-.8c.2-.2.2-.4 0-.6a.4.4 0 0 0-.5 0C0 .7 0 1.6.4 2.2l.3.1Z">
+                            <svg class='DataItemHeadingIcon--tW9fa' width='13'
+                            height='13'
+                            viewBox='0 0 13 13'
+                            xmlns='http://www.w3.org/2000/svg'>
+                              <path d='M5.8 2.3h5.6a.4.4 0 1 0 0-.8H5.8a.4.4 0 1 0 0 .8ZM7.2 10.7H.4a.4.4 0 1 0 0 .8h6.8a.4.4 0 1 0 0-.8ZM.4 5.4H10a.4.4 0 1 0 0-.8H.4c-.2 0-.4.2-.4.4s.2.4.4.4ZM0 8c0 .2.2.4.4.4h12.2a.4.4 0 1 0 0-.8H.4c-.2 0-.4.2-.4.4ZM9.8 10.7H9a.4.4 0 1 0 0 .8h.7c.1.2.1.6-.1.8-.2.2-.2.4 0 .6l.2.1.3-.1c.6-.6.6-1.5 0-2.1l-.3-.1ZM12.3 10.7h-.9a.4.4 0 1 0 0 .8h.7c.2.2.2.6 0 .8-.2.2-.2.4 0 .6l.2.1.3-.1c.6-.6.5-1.5 0-2.1l-.3-.1ZM3.2 2.3H4a.4.4 0 1 0 0-.8h-.7a.7.7 0 0 1 .1-.8c.2-.2.2-.4 0-.6a.4.4 0 0 0-.5 0c-.6.6-.6 1.5 0 2.1l.3.1ZM.7 2.3h.9a.4.4 0 1 0 0-.8H.9a.7.7 0 0 1 0-.8c.2-.2.2-.4 0-.6a.4.4 0 0 0-.5 0C0 .7 0 1.6.4 2.2l.3.1Z'>
                               </path>
                             </svg>Unique words vs recordings ratio</h4>
                             <!-- Value -->
-                            <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc"><span>{{ meaningfulNumber(language.words) }}</span><span>{{ meaningfulNumber(language.records) }}</span></p>
+                            <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc">
+                              <span>{{ meaningfulNumber(language.words) }}</span>
+                              <span>{{ meaningfulNumber(language.records) }}</span>
+                            </p>
                             <div class="progress--Te4aM">
-                              <div class="visually-hidden">{{ percent(language.words,language.records) }}%</div>
-                              <div class="progressBar--u2kfl" :style="{ width: percent(language.words,language.records)+'%'}"></div>
+                              <!-- DIV TRIAL -->
+                              <!-- <div class="visually-hidden">{{ percent(language.words,language.records) }}%</div> -->
+                              <div class="progressBar--u2kfl progress-words" :style="{ width: percent(language.words,language.records)+'%'}"></div>
+                              <div class="progressBar--u2kfl progress-females" :style="{ width: 5+'%'}"></div>
                             </div>
                         </div>
 
@@ -1310,10 +1307,11 @@ i.tpl {
                         <div class="DataItem--r5BlZ">
                           <!-- SVG & Dimension -->
                           <h4 class="DataItemHeading--QFQyU">
-                            <svg class="DataItemHeadingIcon--tW9fa" width="13"
-                              height="13" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M17.08 17.318a6.13 6.13 0 0 1 .306 1.895v3.79c0 .598-.408.997-1.02.997-.613 0-1.022-.399-1.022-.997v-3.89c.102-.797-.204-1.396-.714-1.894-.306-.3-.409-.698-.204-.997.102-.4.51-.599.816-.699 2.96-.299 5.716-1.296 5.716-5.983 0-1.097-.408-2.194-1.224-3.091-.307-.3-.307-.699-.205-.998.307-.797.307-1.595.102-2.393-.51.1-1.326.399-2.653 1.296-.205.2-.51.2-.817.1a12.487 12.487 0 0 0-6.635 0c-.306.1-.612.1-.919-.1-1.225-.897-2.143-1.196-2.654-1.296-.204.798-.204 1.596.102 2.393.102.4.102.798-.204.998-.816.897-1.225 1.994-1.225 3.091 0 4.687 2.756 5.684 5.717 5.983.408 0 .714.3.816.699.102.398 0 .797-.204.997-.51.498-.714 1.097-.714 1.795v3.889c0 .598-.409.997-1.021.997-.613 0-1.021-.399-1.021-.997v-1.695c-3.062.498-4.39-1.197-5.308-2.294-.408-.499-.714-.897-1.123-.997-.51-.1-.918-.698-.714-1.197.102-.498.714-.897 1.225-.698 1.02.3 1.633.997 2.245 1.695.817 1.097 1.531 1.895 3.675 1.496v-.1c0-.598.102-1.296.306-1.795-2.858-.598-5.92-2.393-5.92-7.678 0-1.496.51-2.892 1.429-3.99-.408-1.395-.306-2.692.306-3.988a.91.91 0 0 1 .613-.599c.408-.1 1.735-.299 4.49 1.397 2.247-.499 4.594-.499 6.738 0C18.815.764 20.244.964 20.652 1.063c.306.1.51.3.613.599.51 1.296.612 2.593.306 3.889A6.175 6.175 0 0 1 23 9.54c0 5.684-3.47 7.28-5.92 7.778z"/>
-                          </svg>
+                            <svg class='DataItemHeadingIcon--tW9fa' width='13'
+                            height='13'
+                            viewBox='0 0 13 13'
+                            xmlns='http://www.w3.org/2000/svg'>
+                            <path d='M6.904 1.386c0-.517-.775-.517-.775 0V6.48c0 .103.041.193.112.266l3.685 3.785c.186.236.381.15.541 0a.378.378 0 0 0 0-.54L6.894 6.323z'/><path d='M12.267 6.104A5.79 5.79 0 0 0 6.883.72c-.337-.01-.466-.004-.775.01A5.762 5.762 0 0 0 .735 6.104a5.06 5.06 0 0 0 0 .776c.194 3.008 2.702 5.404 5.76 5.404 3.06 0 5.568-2.396 5.761-5.404.032-.363.027-.5.011-.776zM1.49 6.493c0-2.763 2.244-5.027 5.007-5.027a5.026 5.026 0 0 1 5.016 5.017A5.027 5.027 0 0 1 6.5 11.5a5.014 5.014 0 0 1-5.01-5.008z'/></svg>
                             Recordings gender split</h4>
                           <!-- Value -->
                           <p data-testid="clip-recorded-hour" class="DataItemValue--G3soc">
@@ -1323,7 +1321,7 @@ i.tpl {
                           </p>
                           <div class="progress--Te4aM">
                             <div class="visually-hidden">{{ percent(language.recordsFemale,language.records) || 0 }}%</div>
-                            <div class="progressBar--u2kfl gender-female" :style="{ width: percent(language.recordsFemale,language.records) +'%'}"></div>
+                            <div class="progressBar--u2kfl progress-females" :style="{ width: percent(language.recordsFemale,language.records) +'%'}"></div>
                           </div>
                         </div>
 
@@ -1455,6 +1453,7 @@ var app=new Vue({
           num == undefined ? ''+na
           : num == 0? 0
           : num < 10000? num
+          : (num < 10000 && suffixType=='shorter') ?  (Math.round(num / 100)/10) +k
           : num < 100000? (Math.round(num / 100)/10) +k
             : num < 1000000? (Math.round(num / 1000)) +k
             : num < 20000000? (Math.round(num / 100000)/10) +M
