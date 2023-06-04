@@ -1,5 +1,5 @@
 # LanguagesGallery
-<img src="https://github.com/hugolpz/LanguagesGallery/assets/1420189/3a81cdbc-ccdd-4f98-8896-64a4d7d0cca3" alt="Image" width="200" height="200" align="right">
+<img src="https://github.com/hugolpz/LanguagesGallery/assets/1420189/3a81cdbc-ccdd-4f98-8896-64a4d7d0cca3" alt="Image" width="300" align="right">
 This page presents Lingualibre.org's statistics on a per languages basis with:
 
 - Language name (Wikidata)
