@@ -9,6 +9,9 @@ This page presents Lingualibre.org's statistics on a per languages basis with:
 - Unique words vs recordings ratio. (Lingualibre)
 - Recordings gender split: number of females, other (non-binary and undefined), males recordings. (Lingualibre)
 
+![Screenshot from 2023-06-04 21-59-20](https://github.com/hugolpz/LanguagesGallery/assets/1420189/c26bc81e-299c-4126-acdc-95d06c3052f4)
+
+
 <br clear=all>
 
 # Credit
