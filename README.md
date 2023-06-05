@@ -23,5 +23,12 @@ Sorted by involvement, the following Wikimedian users directly contributed to th
 
 Further statistic visualisation can be developed based on this easy-to-maintain github demonstrator.
 
+# Contribute
+Web page is an open source, open licence Wikimedia sub-project dedicated to supporting language diversity.
+Stack :
+- HTML
+- CSS
+- VueJS
+
 # License
 See footer of [index.html](./index.html) and [LICENSE MPL](./LICENSE).
