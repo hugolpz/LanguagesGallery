@@ -1493,7 +1493,7 @@ var app=new Vue({
              var self=this;
              var filterItems= function(item){ 
               console.log(item)
-              var matchEnglish = item.languageLabel.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+              var matchEnglish = item.languageLabel?item.languageLabel.toLowerCase().indexOf(self.search.toLowerCase())>=0 : false;
               var matchNative = item.languageLabelNative?item.languageLabelNative.toLowerCase().indexOf(self.search.toLowerCase())>=0 : false;
 
               return match = matchEnglish || matchNative ;
