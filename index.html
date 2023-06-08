@@ -1443,12 +1443,10 @@ var app=new Vue({
     el: "#main",
     data: function() { 
       return {
-        search: '',
-        languages: data /*[
-{ "itemLabel": "French1a", "wikidata": "Q150", "population": "208157220", "populationQualifier": "10-100M", "languageLabel": "French1b", "iso": "fra", "speakers": "297", "speakersMales": "189", "speakersOthers": "108", "malesCount": "189", "malesRecords": "225972", "femalesCount": "95", "femalesRecords": "17398", "percent": "7.1", "language": "https://lingualibre.org/entity/Q21", "records": "247371", "words": "161504"}
-]*/,
+        languages: data,
         thresholds: [20000, 3000, 300, 50, 0],
-        urlParams: new URLSearchParams(window.location.search)
+        search: '',
+        urlParams: new URLSearchParams(window.location.search),
       }
     },
     methods: {
@@ -1481,7 +1479,7 @@ var app=new Vue({
         this.search = this.urlParams.get('search')||'';
         this.enlighten = this.urlParams.get('enlighten')||'';
       },
-      
+
       // Not used:
       getData: function(){
         var url = 'https://jsonplaceholder.typicode.com/data';
