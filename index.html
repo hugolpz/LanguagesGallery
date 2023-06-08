@@ -1447,7 +1447,8 @@ var app=new Vue({
         languages: data /*[
 { "itemLabel": "French1a", "wikidata": "Q150", "population": "208157220", "populationQualifier": "10-100M", "languageLabel": "French1b", "iso": "fra", "speakers": "297", "speakersMales": "189", "speakersOthers": "108", "malesCount": "189", "malesRecords": "225972", "femalesCount": "95", "femalesRecords": "17398", "percent": "7.1", "language": "https://lingualibre.org/entity/Q21", "records": "247371", "words": "161504"}
 ]*/,
-        thresholds: [20000, 3000, 300, 50, 0]
+        thresholds: [20000, 3000, 300, 50, 0],
+        urlParams: new URLSearchParams(window.location.search)
       }
     },
     methods: {
@@ -1476,6 +1477,12 @@ var app=new Vue({
       },
       datasetUrl: function(item) { return 'https://lingualibre.org/datasets/'+[item.language.split("/").pop(),item.iso,item.languageLabel].join('-')+'.zip';   
       },
+      async fetchUrlParams() {;
+        this.search = this.urlParams.get('search')||'';
+        this.enlighten = this.urlParams.get('enlighten')||'';
+      },
+      
+      // Not used:
       getData: function(){
         var url = 'https://jsonplaceholder.typicode.com/data';
         axios.get(url).then(response =>{
@@ -1498,6 +1505,7 @@ var app=new Vue({
         }
       },
       mounted() {
+        this.fetchUrlParams();
         fetch('https://hugolpz.github.io/Sparql2Data/data/languages-gallery.json')
           .then(response => response.json())
           .then(data => {
@@ -1508,6 +1516,9 @@ var app=new Vue({
           });
       }
 });
+
+
+
   </script>
 </body>
 </html>
