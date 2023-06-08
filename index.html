@@ -1484,10 +1484,15 @@ var app=new Vue({
       },
     },
     computed: {
-        filteredLanguages: function(){
+      filteredLanguages: function(){
              var self=this;
-             var filterItems= function(item){ var match = item.itemLabel.toLowerCase().indexOf(self.search.toLowerCase())>=0 ;
-              return match; }
+             var filterItems= function(item){ 
+              console.log(item)
+              var matchEnglish = item.languageLabel.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+              var matchNative = item.languageLabelNative?item.languageLabelNative.toLowerCase().indexOf(self.search.toLowerCase())>=0 : false;
+
+              return match = matchEnglish || matchNative ;
+            }
            return this.languages.filter(filterItems);
            //return this.language;
         }
