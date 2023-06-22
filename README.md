@@ -8,27 +8,37 @@ This page presents Lingualibre.org's statistics on a per languages basis with:
 - Gender split : number of females, other (non-binary and undefined), males voices. (Lingualibre)
 - Unique words vs recordings ratio. (Lingualibre)
 - Recordings gender split: number of females, other (non-binary and undefined), males recordings. (Lingualibre)
+- Contribute button: points to our online rapid recording studio.
+- Download button: download access to all open licence audios in this language.
 
 ![Screenshot from 2023-06-04 21-59-20](https://github.com/hugolpz/LanguagesGallery/assets/1420189/c26bc81e-299c-4126-acdc-95d06c3052f4)
 
 
 <br clear=all>
 
-# Credit
-This Lingualibre Languages Gallery is the fruits of 2 years of periodic research and developement. It started with late 2021 writing of Help:SPARQL which aimed to explore per language quantities and gender coverage. Obscure SPARQL queries confirmed our suspicions, the major geographic and gender biaises found raised the need for an human friendly, searchable Languages gallery able to communicate those findings to both the general public and Wikimedia policies makers. 
+## Why a language gallery ?
+The *Lingualibre Languages Gallery* is the fruits of 2 years of periodic research and developement. It started in late 2021, with the writing of [Help:SPARQL](https://lingualibre.org/wiki/Help:SPARQL) which aimed to explore per language statistics, including on gender coverage and geographic distribution. Advanced SPARQL queries confirmed our suspicions, the major geographic and gender biaises found raised the need for an human friendly, searchable *Languages gallery* able to communicate those findings to both the general public and Wikimedia policies makers. 
 
-Technically, this gallery stands upon data consolidation pipeline and online publication name [Sparql2data](https://github.com/hugolpz/Sparql2data). Later Sparql refining was lead by Elfix, while responsive html/css code was recycled from Common Voice Project, with which further collaboration would be welcome.
+## Solution
+The language gallery stands upon data consolidation pipeline and daily publication systems, the [Sparql2data](https://github.com/hugolpz/Sparql2data) bash script. Using refined SPARQL queries, both Lingualibre and Wikidata's data are fetched daily, their JSON responses saved in persistant files and served online. Responsive HTML/CSS code was adapted from Common Voice Project, with whom further collaboration would be welcome.
 
-Sorted by involvement, the following Wikimedian users directly contributed to this project : Yug, Elfix, VIGNERON, Poslovitch, Envel.
+The whole does the job elegantly, providing per language key metrics, with a search function, call to action, datasets download and sharable links.
 
-Further statistic visualisation can be developed based on this easy-to-maintain github demonstrator.
+## Advanced features
+- Search and filter by English or native language name
+- Share a filtered url by appending `?search=YourSearch` to the url
 
-# Contribute
-Web page is an open source, open licence Wikimedia sub-project dedicated to supporting language diversity.
-Stack :
+## Datasets reuse
+Each language's card has a download button to get a zip of all our open licence files. Their filenames should be used to point to the rightful Wikimedia file page, containing the file's licence.
+
+## Contribute
+This Single Page Web Application works with:
 - HTML
 - CSS
 - VueJS
 
-# License
-See footer of [index.html](./index.html) and [LICENSE MPL](./LICENSE).
+## Credits
+Sorted by involvement: Yug, Elfix, VIGNERON, Poslovitch, Envel.
+
+## License
+See [index.html](./index.html)'s footer and [LICENSE MPL](./LICENSE).
