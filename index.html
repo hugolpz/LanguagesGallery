@@ -1207,7 +1207,7 @@ i.tpl {
                 href="https://github.com/hugolpz/LanguagesGallery/#contribute">contribute</a> on Github</a>.
              </p>
               <div class="top">
-                <h1 class="page-heading">Languages</h1>
+                <h1 class="page-heading">Languages <span class="count">({{ filteredLanguages.filter(language => Number(language.records) >= 0 ).length }})</span></h1>
                 <div class="text">
                   <div class="inner">
                     <p>Don't see your language on Lingualibre yet? </p><a class="button outline rounded"
