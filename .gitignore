@@ -1,0 +1,11 @@
+# Common voice source model
+CommonVoice-static.html
+assets/icon1.svg
+assets/octocat.svg
+assets/split.svg
+assets/text.svg
+# CSS cleaner output
+cleancss/
+# Nodejs
+node_modules/
+package-lock.json
