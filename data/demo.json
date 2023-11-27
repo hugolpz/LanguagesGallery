@@ -1,0 +1,26 @@
+[
+    {
+        "iso": "epo",
+        "languageLabel": "Esperanto",
+        "languageLabelNative": "Esperanto",
+        "population": "2000000",
+        "populationQualifier": "1-10M",
+        "wikidata": "Q143",
+    },
+    {
+        "iso": "eng",
+        "languageLabel": "English",
+        "languageLabelNative": "English",
+        "population": "753359540",
+        "populationQualifier": ">100M",
+        "wikidata": "Q1860",
+    },
+    {
+        "iso": "ukr",
+        "languageLabel": "Ukrainian",
+        "languageLabelNative": "українська мова",
+        "population": "27300000",
+        "populationQualifier": "10-100M",
+        "wikidata": "Q8798",
+    },
+];
