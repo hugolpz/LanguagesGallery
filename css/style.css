@@ -609,16 +609,14 @@
   top:15px;
 }
 
-</style>
-<style id="style-icons">
 /* ****************************************************** */
 /* SVG ICON BASE **************************************** */
 .DataItemHeadingIcon--tW9fa {
 	  display: inline-block;
-    fill:currentColor;
     height: 1.15em;
     width: 1.15em;
     margin-inline-end: .35em;
+    fill: currentColor;
   }
 
 /* ****************************************************** */

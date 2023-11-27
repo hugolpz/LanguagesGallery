@@ -5,7 +5,7 @@
         "languageLabelNative": "Esperanto",
         "population": "2000000",
         "populationQualifier": "1-10M",
-        "wikidata": "Q143",
+        "wikidata": "Q143"
     },
     {
         "iso": "eng",
@@ -13,7 +13,7 @@
         "languageLabelNative": "English",
         "population": "753359540",
         "populationQualifier": ">100M",
-        "wikidata": "Q1860",
+        "wikidata": "Q1860"
     },
     {
         "iso": "ukr",
@@ -21,6 +21,6 @@
         "languageLabelNative": "українська мова",
         "population": "27300000",
         "populationQualifier": "10-100M",
-        "wikidata": "Q8798",
-    },
-];
+        "wikidata": "Q8798"
+    }
+]
