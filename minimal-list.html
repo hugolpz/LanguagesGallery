@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2</title>
+  <link rel="stylesheet" href="./css/fonts.css">
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="language in data" :key="language.iso">
+        <span>[{{language.iso}}] {{ language.languageLabel }}</span> : <span>{{ language.populationQualifier || "n.a." }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        data: []
+      },
+      mounted() {
+        fetch('https://hugolpz.github.io/Sparql2Data/data/languages-gallery.json') // Repository set as public Github page, with well formated JSON data.
+          .then(response => response.json())
+          .then(data => {
+            this.data = data;
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }
+    });
+  </script>
+</body>
+</html>
