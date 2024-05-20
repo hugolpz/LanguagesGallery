@@ -24,12 +24,12 @@
               <div class="top">
                 <h1 class="page-heading">Languages <span class="count">({{ filteredLanguages.filter(language => Number(language.records) >= 0 ).length }})</span></h1>
                 <div class="text">
-                  <div class="inner">
+                  <div id="contribute" class="inner">
                     <p>Don't see your language on Lingualibre yet? </p><a class="button outline rounded"
                       href="https://lingualibre.org/index.php?title=Special:UserLogin&returnto=Special%3ARecordWizard&returntoquery=">Log
-                      in and record few words</a>
+                      in and record a few words</a>
                     <!-- SEARCH INPUT -->
-                    <div class="search sticky">
+                    <div id="search" class="search sticky" >
                       <input type="text" placeholder="Search by language name" value="fren" class="" v-model="search">
                       <button type="button" class="text-button " style="padding: 0px;">
                         <img src="assets/search.svg" title="" alt="icon">
@@ -44,10 +44,13 @@
 
                   <div class="title-and-search">
                     <!-- TITLE OF GROUP -->
-                    <h2 class="language-sections__heading">Languages with over {{ meaningfulNumber(threshold) }}
-                      recordings <span class="count">({{ filteredLanguages.filter(language => (thresholds[index-1] ||
+                    <h2 class="language-sections__heading"
+                        :id="'threshold-'+meaningfulNumber(threshold)">
+                        Languages with over {{ meaningfulNumber(threshold) }} recordings 
+                        <span class="count">({{ filteredLanguages.filter(language => (thresholds[index-1] ||
                         100000000) > Number(language.records) && Number(language.records) >= thresholds[index] ).length
-                        }})</span></h2>
+                        }})</span>
+                    </h2>
                   </div>
 
                   <!-- Descriptor -->
@@ -60,7 +63,7 @@
                           style="white-space: nowrap;">"List:{your_ISO}/Unilex"</code>.</i></p>
                     <p v-else>
                       <i>No language matching this search and conditions, please try another search or <a class="link"
-                          href="https://lingualibre.org/wiki/Special:RecordWizard">record few words</a>.</i>
+                          href="https://lingualibre.org/wiki/Special:RecordWizard">record a few words</a>.</i>
                     </p>
 
                   </div>
@@ -68,6 +71,7 @@
                   <div class="languages-page__language-cards">
                     <!-- Component languageCard -->
                     <div class="LanguageCard--NQpAM"
+                      :id="language.iso"
                       v-for="language in filteredLanguages.filter(language => (thresholds[index-1] || 100000000) > Number(language.records) && Number(language.records) >= thresholds[index] )">
                       <div class="LanguageCardContent--HJkVa">
                         <!-- TITRES -->
