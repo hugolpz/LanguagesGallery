@@ -339,7 +339,7 @@ var app=new Vue({
       },
       datasetUrl: function(item) { return 'https://lingualibre.org/datasets/'+[item.language.split("/").pop(),item.iso,item.languageLabel].join('-')+'.zip';   
       },
-      async fetchUrlParams() {;
+      async fetchUrlParams() {
         this.search = this.urlParams.get('search')||'';
         this.enlighten = this.urlParams.get('enlighten')||'';
       },
