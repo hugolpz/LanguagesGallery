@@ -37,8 +37,8 @@
     --top-z-index: 2;
     --middle-z-index: 1;
     --bottom-z-index: 0;
-    --base-font-family: "Open Sans", sans-serif;
-    --strong-font-family: "Zilla Slab", "Georgia", "Utopia", "Charter", serif;
+    --base-font-family: "Lato", sans-serif;
+    --strong-font-family: "Charter", "Lato", serif;
     --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size: 16px;
